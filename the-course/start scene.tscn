@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://glbwovgcv882"]
+[gd_scene load_steps=3 format=3 uid="uid://glbwovgcv882"]
+
+[ext_resource type="Texture2D" uid="uid://dnku55dcgmtb2" path="res://icon.svg" id="1_uc311"]
+[ext_resource type="Script" path="res://lilguy.gd" id="2_rwdd0"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(408, 165)
+scale = Vector2(10, 1)
+texture = ExtResource("1_uc311")
+script = ExtResource("2_rwdd0")
+speed = 100.0
