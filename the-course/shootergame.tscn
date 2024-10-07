@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo51kw2deqty0"]
+[gd_scene load_steps=6 format=3 uid="uid://ct51o1hw04mvy"]
 
 [ext_resource type="Script" path="res://aliengyuy.gd" id="1_da3rs"]
+[ext_resource type="Texture2D" uid="uid://cvp2b8hat0evu" path="res://assets/PNG/Sprites/alienman/lasergun.png" id="2_5hwel"]
 [ext_resource type="Texture2D" uid="uid://8c71fb7y3kpb" path="res://assets/PNG/Sprites/alienman/alienguywithguy.png" id="2_51vx5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15ah2"]
@@ -19,6 +20,17 @@ position = Vector2(457, 232.5)
 shape = SubResource("RectangleShape2D_15ah2")
 
 [node name="flipnode" type="Marker2D" parent="CharacterBody2D"]
+
+[node name="Lasergun" type="Sprite2D" parent="CharacterBody2D/flipnode"]
+z_index = 1
+position = Vector2(488, 246)
+scale = Vector2(1.60938, 1.78125)
+texture = ExtResource("2_5hwel")
+
+[node name="lasergun" type="Node2D" parent="CharacterBody2D/flipnode/Lasergun"]
+z_index = 1
+position = Vector2(0.621338, 0)
+scale = Vector2(0.621359, 0.561403)
 
 [node name="alienguy" type="Sprite2D" parent="CharacterBody2D/flipnode"]
 position = Vector2(455, 237)
