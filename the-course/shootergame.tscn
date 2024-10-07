@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo51kw2deqty0"]
+
+[ext_resource type="Script" path="res://aliengyuy.gd" id="1_da3rs"]
+[ext_resource type="Texture2D" path="res://assets/PNG/Sprites/alienman/alienguywithguy.png" id="2_51vx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15ah2"]
+size = Vector2(72, 91)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bvyhn"]
+distance = -3.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_da3rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(457, 232.5)
+shape = SubResource("RectangleShape2D_15ah2")
+
+[node name="flipnode" type="Marker2D" parent="CharacterBody2D"]
+
+[node name="alienguy" type="Sprite2D" parent="CharacterBody2D/flipnode"]
+position = Vector2(455, 237)
+scale = Vector2(1.70313, 1.6875)
+texture = ExtResource("2_51vx5")
+
+[node name="wherelasercomefrom" type="Node2D" parent="CharacterBody2D/flipnode"]
+position = Vector2(506, 241)
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D/flipnode/wherelasercomefrom"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(454, 357)
+shape = SubResource("WorldBoundaryShape2D_bvyhn")
