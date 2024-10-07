@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpcpuvpyk5kmm"]
+
+[ext_resource type="Script" path="res://laser.gd" id="1_87woo"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_aaikh"]
+a = Vector2(73, 9)
+b = Vector2(7, 8)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gqadh"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_87woo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-37, -9)
+shape = SubResource("SegmentShape2D_aaikh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.897281, 0.81702, 7.70092e-07, 1)
+self_modulate = Color(0.898039, 0.815686, 0, 1)
+position = Vector2(3, 0.25)
+scale = Vector2(66, 1.5)
+texture = SubResource("CanvasTexture_gqadh")
