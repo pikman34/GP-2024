@@ -1,15 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcn4soippejj5"]
+[gd_scene load_steps=7 format=3 uid="uid://bj4o1an3p7cju"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_csdhu"]
-[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="2_hvpqa"]
+[ext_resource type="PackedScene" path="res://explosion.tscn" id="2_hvpqa"]
 [ext_resource type="AudioStream" uid="uid://dxtc48o5qwpl8" path="res://sounds/Laser_Shoot38.wav" id="3_ba8d6"]
+[ext_resource type="Texture2D" uid="uid://dxbi2blxt7tal" path="res://assets/PNG/Sprites/Missiles/spaceMissiles_018.png" id="3_gv38c"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ouehp"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_mkyav"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mn0g"]
-size = Vector2(10, 10)
+size = Vector2(18, 32)
 
 [node name="bullet" type="CharacterBody2D"]
 script = ExtResource("1_csdhu")
@@ -19,10 +18,12 @@ explosion = ExtResource("2_hvpqa")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.313726, 0.568627, 0.701961, 1)
 material = SubResource("CanvasItemMaterial_ouehp")
-scale = Vector2(10, 10)
-texture = SubResource("CanvasTexture_mkyav")
+position = Vector2(-4.76837e-07, 3.8147e-06)
+scale = Vector2(0.875, 0.885714)
+texture = ExtResource("3_gv38c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_5mn0g")
 
 [node name="Timer" type="Timer" parent="."]
