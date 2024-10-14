@@ -28,6 +28,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$flipnode/alienguy.flip_h = false
 		
+	if Input.is_action_just_pressed("turn_right"):
+		velocity.x = -direction * SPEED
+		
+		
 	if Input.is_action_just_pressed("fire"):
 		shoot()
 	
