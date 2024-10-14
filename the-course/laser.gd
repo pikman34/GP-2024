@@ -1,15 +1,18 @@
 extends CharacterBody2D
 
-@export var SPEED = 100
+var vel = Vector2(0, 1)
+var speed = 300
 
-var dir : float
-var spawnPos: Vector2
-var spawnRot : float
-
-func _ready():
-	global_position = spawnPos
-	global_rotation = spawnRot
 	
 func _physics_process(delta):
-	velocity = Vector2 (0, -SPEED).rotated(dir)
-	move_and_slide()
+
+	var collision_info = move_and_collide(velocity.normalized() * delta * speed)
+
+func _on_area_2d_body_entered(body):
+	queue_free()
+	
+func _on_life_timeout():
+	queue_free()
+
+func instance():
+	pass

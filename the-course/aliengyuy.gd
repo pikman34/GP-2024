@@ -24,11 +24,12 @@ func _physics_process(delta):
 	if direction<0:
 		velocity.x = direction * SPEED
 		$flipnode/alienguy.flip_h = true	
-		$flipnode/Lasergun.flip_h = true
+		$flipnode/pewpew.flip_h = true
 	else:
 		velocity.x = direction * SPEED
 		$flipnode/alienguy.flip_h = false
-		$flipnode/Lasergun.flip_h = false
+		$flipnode/pewpew.flip_h = false
+		
 		
 	
 	move_and_slide()
