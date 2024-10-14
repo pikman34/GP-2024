@@ -1,21 +1,19 @@
 extends Node2D
 
-const laserPath = preload("res://laserbeam.tscn")
-
-var can_fire = true;
+@onready var main = get_tree().get_root().get_node("main")
+@onready var laser = load("res://laserbeam.tscn")
 
 func _ready():
-		pass
-		
-func _process(delta):
-	if Input.is_action_just_pressed("fire"):
-		shoot()
-		
-
+	shoot()
 	
 func shoot():
-	var laser = laserPath.instance()
-	
-	get_parent().add_child(laser)
-	laser.position = $"../../wherelasercomefrom/Marker2D".global_position
-	
+	if Input.is_action_just_pressed("fire"):
+		var instance = laser.instantiate()
+		instance.spawnPos = global_position
+		instance.spawnRot = rotation
+		instance.zdex = z_index -1
+		main.add_child.call_deferred(instance)
+		
+
+func _on_lasercooldown_timeout():
+	shoot()

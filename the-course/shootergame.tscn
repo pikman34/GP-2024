@@ -31,7 +31,12 @@ texture = ExtResource("3_ve4f4")
 
 [node name="lasergun" type="Node2D" parent="CharacterBody2D/flipnode/pewpew"]
 z_index = 2
+position = Vector2(11.6652, -2.60755)
 script = ExtResource("2_jt1wl")
+
+[node name="lasercooldown" type="Timer" parent="CharacterBody2D/flipnode/pewpew/lasergun"]
+wait_time = 0.005
+autostart = true
 
 [node name="alienguy" type="Sprite2D" parent="CharacterBody2D/flipnode"]
 position = Vector2(455, 237)
@@ -48,3 +53,5 @@ position = Vector2(506, 241)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(454, 357)
 shape = SubResource("WorldBoundaryShape2D_bvyhn")
+
+[connection signal="timeout" from="CharacterBody2D/flipnode/pewpew/lasergun/lasercooldown" to="CharacterBody2D/flipnode/pewpew/lasergun" method="_on_lasercooldown_timeout"]
