@@ -3,27 +3,28 @@
 [ext_resource type="Script" path="res://laser.gd" id="1_87woo"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_aaikh"]
-a = Vector2(41, 0)
-b = Vector2(-27, 0)
+a = Vector2(42, 1)
+b = Vector2(-27, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_gqadh"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(31, 0)
+position = Vector2(28, -2)
 script = ExtResource("1_87woo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(7, 0)
 shape = SubResource("SegmentShape2D_aaikh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.897281, 0.81702, 7.70092e-07, 1)
 self_modulate = Color(0.898039, 0.815686, 0, 1)
-position = Vector2(3, 0.25)
+position = Vector2(15, 1)
 scale = Vector2(66, 1.5)
 texture = SubResource("CanvasTexture_gqadh")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(10, 0)
 
 [node name="LIFE" type="Timer" parent="Area2D"]
 autostart = true
