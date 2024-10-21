@@ -4,9 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bj4o1an3p7cju" path="res://bullet.tscn" id="2_tps20"]
 [ext_resource type="Texture2D" uid="uid://dovexx5sfmv06" path="res://assets/PNG/Sprites/Ships/spaceShips_006.png" id="3_ov5lq"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bcf83"]
-radius = 48.28
-height = 153.98
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gtcp"]
+radius = 40.0
 
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("bullet_spawn_point")]
 position = Vector2(254, 215)
@@ -15,12 +14,12 @@ bullet_scene = ExtResource("2_tps20")
 bullet_spawn_point = NodePath("Node2D/bullet_spawn_point")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_ov5lq")
+texture = ExtResource("2_m46rs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_bcf83")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="bullet_spawn_point" type="Marker2D" parent="Node2D"]
-position = Vector2(0, 122)
+[node name="bullet_spawn_point" type="Marker2D" parent="."]
+position = Vector2(2, 170)
