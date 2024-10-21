@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ct51o1hw04mvy"]
 
 [ext_resource type="Script" path="res://aliengyuy.gd" id="1_da3rs"]
-[ext_resource type="Texture2D" path="res://assets/PNG/Sprites/alienman/alienguywithguy.png" id="2_51vx5"]
+[ext_resource type="Texture2D" uid="uid://8c71fb7y3kpb" path="res://assets/PNG/Sprites/alienman/alienguywithguy.png" id="2_51vx5"]
 [ext_resource type="Script" path="res://lasergun.gd" id="2_jt1wl"]
-[ext_resource type="Texture2D" path="res://assets/PNG/Sprites/alienman/lasergun.png" id="3_ve4f4"]
+[ext_resource type="Texture2D" uid="uid://cvp2b8hat0evu" path="res://assets/PNG/Sprites/alienman/lasergun.png" id="3_ve4f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15ah2"]
 size = Vector2(62, 91)
