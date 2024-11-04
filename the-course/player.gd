@@ -10,6 +10,7 @@ const TURN_RATE = 180
 
 func print_stuff():
 	DebugDraw2D.set_text("pos", position)
+	DebugDraw2D.set_text("global position", global_position)
 	DebugDraw2D.set_text("rotation", rotation)
 	DebugDraw2D.set_text("rotation deg", rad_to_deg(rotation))
 	DebugDraw2D.set_text("transform.x", transform.x)
