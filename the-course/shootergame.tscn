@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bo51kw2deqty0"]
 
 [ext_resource type="Script" path="res://aliengyuy.gd" id="1_da3rs"]
-[ext_resource type="Texture2D" path="res://assets/PNG/Sprites/alienman/alienguywithguy.png" id="2_51vx5"]
+[ext_resource type="Texture2D" uid="uid://8c71fb7y3kpb" path="res://assets/PNG/Sprites/alienman/alienguywithguy.png" id="2_51vx5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15ah2"]
 size = Vector2(72, 91)

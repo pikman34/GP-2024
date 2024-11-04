@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjhxdshv7j30u"]
+
+[ext_resource type="Texture2D" uid="uid://8c71fb7y3kpb" path="res://assets/PNG/Sprites/alienman/alienguywithguy.png" id="1_d5vx5"]
+[ext_resource type="Texture2D" uid="uid://c844yfbd26ea8" path="res://sprites/bug.png" id="2_yy8cq"]
+[ext_resource type="Script" path="res://bug2.gd" id="3_rt60y"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="man" type="Sprite2D" parent="."]
+position = Vector2(405, 206)
+texture = ExtResource("1_d5vx5")
+
+[node name="bug" type="Sprite2D" parent="."]
+position = Vector2(36, 27)
+texture = ExtResource("2_yy8cq")
+script = ExtResource("3_rt60y")
