@@ -16,5 +16,7 @@ position = Vector2(36, 27)
 texture = ExtResource("2_yy8cq")
 script = ExtResource("3_rt60y")
 
-[node name="Node" type="Node" parent="."]
+[node name="spiral" type="Node2D" parent="."]
 script = ExtResource("4_0p0ew")
+count = null
+radius = null
