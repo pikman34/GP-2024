@@ -14,13 +14,13 @@ size = Vector2(134, 134)
 position = Vector2(509, 171)
 script = ExtResource("1_xrfeb")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="wall" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="wall"]
 position = Vector2(291, -1)
 texture = ExtResource("2_f7t2q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
 position = Vector2(291, -1)
 shape = SubResource("RectangleShape2D_8davg")
 

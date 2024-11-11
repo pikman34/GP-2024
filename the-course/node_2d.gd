@@ -1,8 +1,18 @@
 extends Node2D
 
+@export var wall_scene:PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	var count = 10
+	
+	for i in range(count):
+		var w = wall_scene.instantiate()
+		var p = Vector2(i * 50, 0)
+		w.position = p
+		add_child(w)
+	
 	pass # Replace with function body.
 
 

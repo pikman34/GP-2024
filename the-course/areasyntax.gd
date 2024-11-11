@@ -55,13 +55,14 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	print("Collided!")
 	
-	print(area)
-	
-	var explosion:GPUParticles2D = explosion_scene.instantiate()
-	explosion.global_position = area.global_position
-	
-	get_parent().add_child(explosion)
-	
-	area.queue_free()
+	if area.name == "wall" or area.name == "wall2":
+		print(area)
+		
+		var explosion:GPUParticles2D = explosion_scene.instantiate()
+		explosion.global_position = area.global_position
+		explosion.emitting = true
+		get_parent().add_child(explosion)
+		
+		area.queue_free()
 	
 	pass # Replace with function body.
