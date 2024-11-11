@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bexl5ssgdwlma"]
+
+[ext_resource type="PackedScene" uid="uid://bg8tdwsgki7o1" path="res://thing.tscn" id="1_ftam1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q6r0m"]
+
+[sub_resource type="Skin" id="Skin_tuc0e"]
+
+[sub_resource type="Environment" id="Environment_vaiky"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" parent="." instance=ExtResource("1_ftam1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0092168, 0.0541595, 1.49012e-08)
+mesh = SubResource("BoxMesh_q6r0m")
+skin = SubResource("Skin_tuc0e")
+thing_scene = ExtResource("1_ftam1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.217683, 0.39418, 0.892881, -0.0487672, 0.909283, -0.41331, -0.9748, -0.133514, -0.178713, 2.25651, 0.325943, -0.16195)
+fov = 111.02
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.267238, 0.96363, 0, -0.96363, 0.267238, -0.0409225, 5.61462, 1.46512)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vaiky")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="MeshInstance3D" method="_on_timer_timeout"]

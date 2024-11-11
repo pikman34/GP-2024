@@ -49,6 +49,8 @@ func _process(delta: float) -> void:
 	position.x += 1
 	# position.y += 1
 	
+	
+	
 	pass
 
 
