@@ -11,21 +11,14 @@ func _ready() -> void:
 	f = 10
 	g = 20
 	h = 3
-	
-	
 	f += 2 # add 2 to f
 	f = f + 2
 	g = f - 5
-	
 	h *= 2
 	g = h / 3
-	
-	
 	var i:int
 	var j:int
-	
 	var k:int
-	
 	i = 10
 	j = 4
 	k = i / j
@@ -39,10 +32,14 @@ func _ready() -> void:
 	print(k)
 	
 	
-	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	DebugDraw2D.set_text("pos", position)
+	DebugDraw2D.set_text("glo_pos", global_position)
+	DebugDraw2D.set_text("rot", rotation)
+	DebugDraw2D.set_text("glo_rot", global_rotation)
 	pass
