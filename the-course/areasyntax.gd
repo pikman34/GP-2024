@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var explosion_scene:PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,4 +43,25 @@ func _process(delta: float) -> void:
 	DebugDraw2D.set_text("glo_pos", global_position)
 	DebugDraw2D.set_text("rot", rotation)
 	DebugDraw2D.set_text("glo_rot", global_rotation)
+	
+	rotation += 0.1
+	
+	position.x += 1
+	# position.y += 1
+	
 	pass
+
+
+func _on_area_entered(area: Area2D) -> void:
+	print("Collided!")
+	
+	print(area)
+	
+	var explosion:GPUParticles2D = explosion_scene.instantiate()
+	explosion.global_position = area.global_position
+	
+	get_parent().add_child(explosion)
+	
+	area.queue_free()
+	
+	pass # Replace with function body.
