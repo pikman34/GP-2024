@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://skibidiright.gd" id="3_ehqm6"]
 
 [node name="if_statement" type="Node2D"]
-position = Vector2(57, 43)
 script = ExtResource("1_8w2qs")
 
 [node name="uglyassbug" type="Sprite2D" parent="."]

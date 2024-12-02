@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 	var r = get_viewport_rect()
 	global_position.x += speed * delta
 	if global_position.x > r.size.x:
-		global_position.x += -2 * speed * delta
+		global_position.x += speed * delta
 	pass
