@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdrfqrmthfftp"]
+[gd_scene load_steps=4 format=3 uid="uid://bdrfqrmthfftp"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_237l2"]
-[ext_resource type="AudioStream" uid="uid://b6362bgmpb1fj" path="res://Skibidi Toilet Full Song Music Video.mp3" id="2_pdcwc"]
+[ext_resource type="PackedScene" uid="uid://bi6vwq4c0hkxf" path="res://install_sounds.tscn" id="1_gris2"]
+[ext_resource type="PackedScene" uid="uid://bws85usyjmeus" path="res://sfxvolumeslider.tscn" id="2_11dx3"]
+
+[sub_resource type="Theme" id="Theme_85pjs"]
+default_base_scale = 0.55
 
 [node name="control" type="Control"]
 layout_mode = 3
@@ -10,7 +13,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_237l2")
 
 [node name="Skibidi button" type="Button" parent="."]
 layout_mode = 1
@@ -19,16 +21,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -31.5
-offset_right = 85.0
-offset_bottom = 31.5
+offset_left = -138.0
+offset_top = -61.0
+offset_right = 138.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Skibidi"
 
-[node name="Skibidi" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_pdcwc")
+[node name="InstallSounds" parent="." instance=ExtResource("1_gris2")]
+root_path = NodePath("..")
 
-[connection signal="pressed" from="Skibidi button" to="." method="_on_random_sound_pressed"]
+[node name="audio slider" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 195.0
+offset_right = 783.0
+offset_bottom = 224.0
+theme = SubResource("Theme_85pjs")
+
+[node name="Sfx name" type="Label" parent="audio slider"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SFX volume"
+
+[node name="sfx volume" parent="audio slider" instance=ExtResource("2_11dx3")]
+layout_mode = 2
+bus_name = "Sfx"
