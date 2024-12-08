@@ -1,5 +1,6 @@
 extends Control
 
+var is_major = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,27 +13,47 @@ func _process(delta: float) -> void:
 
 
 func _on_A_pressed() -> void:
-	$Achord.play()
-
+	if is_major:
+		$Achord.play()
+	else:
+		$Aminor.play()
 
 func _on_B_pressed() -> void:
-	$Bchord.play()
-
+	if is_major:
+		$Bchord.play()
+	else:
+		$Bminor.play()
 
 func _on_C_pressed() -> void:
-	$Cchord.play()
-
+	if is_major:
+		$Cchord.play()
+	else:
+		$Cminor.play()
 
 func _on_D_pressed() -> void:
-	$Dchord.play()
+	if is_major:
+		$Dchord.play()
+	else:
+		$Dminor.play()
 
 func _on_E_pressed() -> void:
-	$Echord.play()
-
+	if is_major:
+		$Echord.play()
+	else:
+		$Eminor.play()
 
 func _on_F_pressed() -> void:
-	$Fchord.play()
-
+	if is_major:
+		$Fchord.play()
+	else:
+		$Fminor.play()
 
 func _on_G_pressed() -> void:
-	$Gchord.play()
+	if is_major:
+		$Gchord.play()
+	else:
+		$Gminor.play()
+
+func _on_major_minor_toggle_pressed() -> void:
+	is_major = !is_major
+	

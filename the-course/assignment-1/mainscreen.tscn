@@ -1,14 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdrfqrmthfftp"]
+[gd_scene load_steps=19 format=3 uid="uid://bdrfqrmthfftp"]
 
 [ext_resource type="Script" path="res://chords.gd" id="1_cqf2n"]
 [ext_resource type="PackedScene" uid="uid://bws85usyjmeus" path="res://sfxvolumeslider.tscn" id="2_11dx3"]
+[ext_resource type="Script" path="res://major_minor_toggle.gd" id="3_g1cmf"]
 [ext_resource type="AudioStream" uid="uid://byca6l6umgy2y" path="res://Guitarchords/AMajor.mp3" id="3_kegnq"]
 [ext_resource type="AudioStream" uid="uid://dkhwe0fp5r4bk" path="res://Guitarchords/BMajor.mp3" id="4_6f6hp"]
+[ext_resource type="AudioStream" uid="uid://da4ggklv5ms6m" path="res://Guitarchords/AMinor.mp3" id="4_e4nvm"]
 [ext_resource type="AudioStream" uid="uid://bfehoosjrylwj" path="res://Guitarchords/CMajor.mp3" id="5_ys1qa"]
+[ext_resource type="AudioStream" uid="uid://cmbmwc54uqhne" path="res://Guitarchords/BMinor.mp3" id="6_ek1o7"]
+[ext_resource type="AudioStream" uid="uid://tt0q0yxoqx1g" path="res://Guitarchords/CMinor.mp3" id="6_lxhkj"]
 [ext_resource type="AudioStream" uid="uid://cij57efqrgwrt" path="res://Guitarchords/DMajor.mp3" id="6_xlnkn"]
 [ext_resource type="AudioStream" uid="uid://b4mwwpthbn1jb" path="res://Guitarchords/EMajor.mp3" id="7_8pdti"]
 [ext_resource type="AudioStream" uid="uid://dodwkwmq0bqdt" path="res://Guitarchords/FMajor.mp3" id="8_h40ue"]
 [ext_resource type="AudioStream" uid="uid://d1gdedtf230ws" path="res://Guitarchords/GMajor.mp3" id="9_ana85"]
+[ext_resource type="AudioStream" uid="uid://b4es7fot0b4i" path="res://Guitarchords/DMinor.mp3" id="10_sxp0s"]
+[ext_resource type="AudioStream" uid="uid://bfblv7mpum6a0" path="res://Guitarchords/EMinor.mp3" id="12_cwuxw"]
+[ext_resource type="AudioStream" uid="uid://bcocxbccr0pl4" path="res://Guitarchords/FMinor.mp3" id="14_243hf"]
+[ext_resource type="AudioStream" uid="uid://bqdojf71dgvs6" path="res://Guitarchords/GMinor.mp3" id="16_hkauo"]
 
 [sub_resource type="Theme" id="Theme_85pjs"]
 default_base_scale = 0.55
@@ -92,32 +100,73 @@ text = "SFX volume"
 layout_mode = 2
 bus_name = "Sfx"
 
+[node name="Major_Minor toggle" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 206.0
+offset_bottom = 2.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Major"
+script = ExtResource("3_g1cmf")
+
 [node name="Achord" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_kegnq")
+bus = &"Sfx"
+
+[node name="Aminor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e4nvm")
 bus = &"Sfx"
 
 [node name="Bchord" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_6f6hp")
 bus = &"Sfx"
 
+[node name="Bminor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ek1o7")
+bus = &"Sfx"
+
 [node name="Cchord" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ys1qa")
+bus = &"Sfx"
+
+[node name="Cminor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lxhkj")
 bus = &"Sfx"
 
 [node name="Dchord" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_xlnkn")
 bus = &"Sfx"
 
+[node name="Dminor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sxp0s")
+bus = &"Sfx"
+
 [node name="Echord" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_8pdti")
+bus = &"Sfx"
+
+[node name="Eminor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_cwuxw")
 bus = &"Sfx"
 
 [node name="Fchord" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_h40ue")
 bus = &"Sfx"
 
+[node name="Fminor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_243hf")
+bus = &"Sfx"
+
 [node name="Gchord" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ana85")
+bus = &"Sfx"
+
+[node name="Gminor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_hkauo")
 bus = &"Sfx"
 
 [connection signal="pressed" from="Strings/A" to="." method="_on_A_pressed"]
@@ -127,3 +176,5 @@ bus = &"Sfx"
 [connection signal="pressed" from="Strings/E" to="." method="_on_E_pressed"]
 [connection signal="pressed" from="Strings/F" to="." method="_on_F_pressed"]
 [connection signal="pressed" from="Strings/G" to="." method="_on_G_pressed"]
+[connection signal="pressed" from="Major_Minor toggle" to="." method="_on_major_minor_toggle_pressed"]
+[connection signal="pressed" from="Major_Minor toggle" to="Major_Minor toggle" method="_on_pressed"]
