@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bdrfqrmthfftp"]
+[gd_scene load_steps=24 format=3 uid="uid://bdrfqrmthfftp"]
 
 [ext_resource type="Script" path="res://chords.gd" id="1_cqf2n"]
 [ext_resource type="PackedScene" uid="uid://bws85usyjmeus" path="res://sfxvolumeslider.tscn" id="2_11dx3"]
+[ext_resource type="Texture2D" uid="uid://b6j6ojmk8x4v6" path="res://assets/string_button.png" id="2_641xv"]
 [ext_resource type="Script" path="res://major_minor_toggle.gd" id="3_g1cmf"]
 [ext_resource type="AudioStream" uid="uid://byca6l6umgy2y" path="res://Guitarchords/AMajor.mp3" id="3_kegnq"]
 [ext_resource type="AudioStream" uid="uid://dkhwe0fp5r4bk" path="res://Guitarchords/BMajor.mp3" id="4_6f6hp"]
@@ -17,6 +18,10 @@
 [ext_resource type="AudioStream" uid="uid://bfblv7mpum6a0" path="res://Guitarchords/EMinor.mp3" id="12_cwuxw"]
 [ext_resource type="AudioStream" uid="uid://bcocxbccr0pl4" path="res://Guitarchords/FMinor.mp3" id="14_243hf"]
 [ext_resource type="AudioStream" uid="uid://bqdojf71dgvs6" path="res://Guitarchords/GMinor.mp3" id="16_hkauo"]
+[ext_resource type="Texture2D" uid="uid://3mp87pangsfu" path="res://assets/pngtree-drum-set-vector-png-image_6910244.png" id="19_2pxxe"]
+[ext_resource type="AudioStream" uid="uid://03bs7u2jnjo8" path="res://Guitarchords/120 BPM - ROCK - 44 Drum Track - Metronome - Drum Beat.mp3" id="19_xhdq7"]
+[ext_resource type="Texture2D" uid="uid://drl8735cpah00" path="res://assets/360_F_303549337_gi8g9bnnm44FBY5xqxejNdThBSKIi28E.png" id="20_2rsup"]
+[ext_resource type="Texture2D" uid="uid://bxgoqww73xy8" path="res://assets/guitar.png" id="21_kwwoy"]
 
 [sub_resource type="Theme" id="Theme_85pjs"]
 default_base_scale = 0.55
@@ -34,80 +39,176 @@ script = ExtResource("1_cqf2n")
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.02
-offset_left = 421.0
-offset_top = 285.0
-offset_right = 679.0
-offset_bottom = 335.04
+offset_left = 455.0
+offset_top = 187.0
+offset_right = 864.0
+offset_bottom = 732.04
+scale = Vector2(0.5, 0.5)
 
 [node name="A" type="Button" parent="Strings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "A"
+text = "
+
+
+
+
+
+
+
+
+A"
+icon = ExtResource("2_641xv")
+clip_text = true
+icon_alignment = 1
 metadata/chord = "Key = \"chord\" Value = \"AMajor\""
 
 [node name="B" type="Button" parent="Strings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "B"
+text = "
+
+
+
+
+
+
+
+
+B"
+icon = ExtResource("2_641xv")
+clip_text = true
+icon_alignment = 1
 metadata/Chord = "Key = \"chord\" Value = \"BMajor\""
 
 [node name="C" type="Button" parent="Strings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "C"
+text = "
+
+
+
+
+
+
+
+
+C"
+icon = ExtResource("2_641xv")
+clip_text = true
+icon_alignment = 1
 metadata/Chord = "Key = \"chord\" Value = \"CMajor\""
 
 [node name="D" type="Button" parent="Strings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "D"
+text = "
+
+
+
+
+
+
+
+
+D"
+icon = ExtResource("2_641xv")
+clip_text = true
+icon_alignment = 1
 metadata/Chord = "Key = \"chord\" Value = \"DMajor\""
 
 [node name="E" type="Button" parent="Strings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "E"
+text = "
+
+
+
+
+
+
+
+
+E"
+icon = ExtResource("2_641xv")
+clip_text = true
+icon_alignment = 1
 metadata/Chord = "Key = \"chord\" Value = \"EMajor\""
 
 [node name="F" type="Button" parent="Strings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "F"
+text = "
+
+
+
+
+
+
+
+
+F"
+icon = ExtResource("2_641xv")
+clip_text = true
+icon_alignment = 1
 metadata/Chord = "Key = \"chord\" Value = \"FMajor\""
 
 [node name="G" type="Button" parent="Strings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "G"
+text = "
+
+
+
+
+
+
+
+
+G"
+icon = ExtResource("2_641xv")
+clip_text = true
+icon_alignment = 1
 metadata/Chord = "Key = \"chord\" Value = \"GMajor\""
 metadata/Key = "\"chord\""
 metadata/Value = "\"GMajo"
 
 [node name="audio slider" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 367.0
-offset_top = 195.0
-offset_right = 783.0
-offset_bottom = 224.0
+offset_left = 894.0
+offset_top = 526.0
+offset_right = 1146.0
+offset_bottom = 640.0
 theme = SubResource("Theme_85pjs")
 
 [node name="Sfx name" type="Label" parent="audio slider"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "SFX volume"
+theme_override_font_sizes/font_size = 25
+text = "Guitar "
 
 [node name="sfx volume" parent="audio slider" instance=ExtResource("2_11dx3")]
 layout_mode = 2
 bus_name = "Sfx"
+
+[node name="Drums" type="Label" parent="audio slider"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Drums
+"
+
+[node name="drums" parent="audio slider" instance=ExtResource("2_11dx3")]
+layout_mode = 2
+bus_name = "drums"
 
 [node name="Major_Minor toggle" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -100.0
-offset_right = 206.0
-offset_bottom = 2.0
+offset_left = 990.0
+offset_top = -280.0
+offset_right = 1151.0
+offset_bottom = -208.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Major"
@@ -168,6 +269,30 @@ bus = &"Sfx"
 [node name="Gminor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_hkauo")
 bus = &"Sfx"
+
+[node name="Drums" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_xhdq7")
+autoplay = true
+bus = &"drums"
+parameters/looping = true
+
+[node name="Pngtree-drum-set-vector-png-image6910244" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(586, 383)
+scale = Vector2(1.16007, 1.11667)
+texture = ExtResource("19_2pxxe")
+
+[node name="360F303549337Gi8g9Bnnm44fby5XqxejNdThBskIi28e" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576.5, 324.25)
+scale = Vector2(1.81406, 1.82083)
+texture = ExtResource("20_2rsup")
+
+[node name="Guitar" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(593, 350)
+scale = Vector2(2.80833, 0.591667)
+texture = ExtResource("21_kwwoy")
 
 [connection signal="pressed" from="Strings/A" to="." method="_on_A_pressed"]
 [connection signal="pressed" from="Strings/B" to="." method="_on_B_pressed"]

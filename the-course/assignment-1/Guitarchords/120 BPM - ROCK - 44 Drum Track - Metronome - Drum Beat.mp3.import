@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://03bs7u2jnjo8"
+path="res://.godot/imported/120 BPM - ROCK - 44 Drum Track - Metronome - Drum Beat.mp3-56db88bf6e3f9c278f8ee8a7fa12f030.mp3str"
+
+[deps]
+
+source_file="res://Guitarchords/120 BPM - ROCK - 44 Drum Track - Metronome - Drum Beat.mp3"
+dest_files=["res://.godot/imported/120 BPM - ROCK - 44 Drum Track - Metronome - Drum Beat.mp3-56db88bf6e3f9c278f8ee8a7fa12f030.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
