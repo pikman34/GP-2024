@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cft3lkivq10pe"]
+
+[ext_resource type="Script" uid="uid://cp8fxrqls58if" path="res://health_pack.gd" id="1_geugr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr1cd"]
+
+[node name="Healthpack" type="Area2D"]
+script = ExtResource("1_geugr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tr1cd")

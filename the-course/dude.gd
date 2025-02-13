@@ -121,6 +121,14 @@ func _physics_process(delta: float) -> void:
 			respawn()
 		else:
 			velocity = velocity * 0.99
+			
+		if c and c.get_collider().is_in_group("healthpack"):
+			print("1-UP!")
+			lives += 1
+		
+		else:
+			velocity = velocity * 0.99
+			
 		
 	
 func _ready() -> void:
