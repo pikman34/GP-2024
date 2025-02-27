@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://5xmg4kyjea30"]
+[gd_scene load_steps=13 format=3 uid="uid://5xmg4kyjea30"]
 
 [ext_resource type="Script" uid="uid://byl3sew3vbcr5" path="res://shooter_game.gd" id="1_c5ar1"]
 [ext_resource type="AudioStream" uid="uid://boy36rslfnhmp" path="res://sounds/heroplanet.mp3" id="2_ejtda"]
@@ -13,6 +13,9 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8wc7a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nt20y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_otu4l"]
+radius = 108.35
 
 [node name="shooter_game" type="Node2D"]
 script = ExtResource("1_c5ar1")
@@ -91,3 +94,11 @@ texture = ExtResource("8_8wc7a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dude_enemy"]
 scale = Vector2(1.925, 1.925)
 shape = SubResource("CircleShape2D_nt20y")
+
+[node name="Area2D" type="Area2D" parent="dude_enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dude_enemy/Area2D"]
+shape = SubResource("CircleShape2D_otu4l")
+
+[connection signal="body_entered" from="dude_enemy/Area2D" to="dude_enemy" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="dude_enemy/Area2D" to="dude_enemy" method="_on_area_2d_body_exited"]
