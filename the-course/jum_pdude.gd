@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 350.0
+const JUMP_VELOCITY = -450.0
 
+var score = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,3 +24,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_coin_body_entered(body: Node2D) -> void:
+	body.score = body.score + 1
+	
+	
+	
+	pass # Replace with function body.
