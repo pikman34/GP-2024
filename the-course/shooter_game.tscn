@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://5xmg4kyjea30"]
+[gd_scene load_steps=12 format=3 uid="uid://5xmg4kyjea30"]
 
 [ext_resource type="Script" uid="uid://byl3sew3vbcr5" path="res://shooter_game.gd" id="1_c5ar1"]
 [ext_resource type="AudioStream" uid="uid://boy36rslfnhmp" path="res://sounds/heroplanet.mp3" id="2_ejtda"]
@@ -7,8 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="3_c5ar1"]
 [ext_resource type="Script" uid="uid://ck2i25kw3ks1m" path="res://ufo_spawner.gd" id="4_gm47b"]
 [ext_resource type="PackedScene" uid="uid://ck14xoiwnmh1v" path="res://enemy.tscn" id="7_ndjor"]
+[ext_resource type="Texture2D" uid="uid://c844yfbd26ea8" path="res://sprites/bug.png" id="8_8wc7a"]
+[ext_resource type="Script" uid="uid://b04ont1peamue" path="res://dude_enemy.gd" id="8_nt20y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8wc7a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nt20y"]
 
 [node name="shooter_game" type="Node2D"]
 script = ExtResource("1_c5ar1")
@@ -76,3 +80,14 @@ count = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_8wc7a")
+
+[node name="dude_enemy" type="CharacterBody2D" parent="."]
+position = Vector2(159, 0)
+script = ExtResource("8_nt20y")
+
+[node name="Sprite2D" type="Sprite2D" parent="dude_enemy"]
+texture = ExtResource("8_8wc7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dude_enemy"]
+scale = Vector2(1.925, 1.925)
+shape = SubResource("CircleShape2D_nt20y")

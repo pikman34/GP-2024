@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://yj4dtfq7633h"]
+[gd_scene load_steps=10 format=3 uid="uid://yj4dtfq7633h"]
 
 [ext_resource type="Texture2D" uid="uid://dnku55dcgmtb2" path="res://icon.svg" id="1_tuvkx"]
 [ext_resource type="Script" uid="uid://bbtxh70ku8crj" path="res://jum_pdude.gd" id="2_0nau7"]
 [ext_resource type="Script" uid="uid://cc28nfch1vg2u" path="res://coin.gd" id="3_43jer"]
+[ext_resource type="Script" uid="uid://dpbyb84ls7mop" path="res://enemydude.gd" id="4_d2hnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nau7"]
 size = Vector2(321, 47)
@@ -12,6 +13,11 @@ size = Vector2(141, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2hnt"]
 size = Vector2(84, 76)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_43jer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v350l"]
+size = Vector2(134, 122)
 
 [node name="Node2D" type="Node2D"]
 
@@ -77,4 +83,22 @@ texture = ExtResource("1_tuvkx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin"]
 shape = SubResource("RectangleShape2D_d2hnt")
 
+[node name="enemydude" type="CharacterBody2D" parent="."]
+position = Vector2(1198, 100)
+script = ExtResource("4_d2hnt")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemydude"]
+modulate = Color(1, 0.117647, 0.0431373, 1)
+texture = ExtResource("1_tuvkx")
+
+[node name="Area2D" type="Area2D" parent="enemydude"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemydude/Area2D"]
+scale = Vector2(42.79, 42.79)
+shape = SubResource("CircleShape2D_43jer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemydude"]
+shape = SubResource("RectangleShape2D_v350l")
+
 [connection signal="body_entered" from="coin" to="coin" method="_on_body_entered"]
+[connection signal="body_entered" from="enemydude/Area2D" to="enemydude" method="_on_area_2d_body_entered"]
