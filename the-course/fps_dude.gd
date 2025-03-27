@@ -29,8 +29,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotate(transform.basis.y, deg_to_rad(relative.x * deg_to_rad(rot_speed) * delta))
-	rotate(transform.basis.x, deg_to_rad(- relative.y * deg_to_rad(rot_speed) * delta))
+	rotate(Vector3.DOWN, deg_to_rad(relative.x * deg_to_rad(rot_speed) * delta))
+	rotate(Vector3.RIGHT, deg_to_rad(- relative.y * deg_to_rad(rot_speed) * delta))
 	
 	$"../Label".text = "AMMO: " + str(ammo)
 	relative = Vector2.ZERO
